@@ -8,7 +8,7 @@ const args = minimist(process.argv.slice(2));
 
 if (args.h) {
     try {
-        consle.log(`
+        console.log(`
             Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
             -h            Show this help message and exit.
             -n, -s        Latitude: N positive; S negative.
@@ -33,7 +33,7 @@ const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' 
 
 const data = await response.json();
 
-if (!args.h){
+if (!args.h ){
     console.log(data)
     
     const days = args.d
