@@ -17,10 +17,10 @@ if (args.h) {
             -d 0-6        Day to retrieve weather: 0 is today; defaults to 1.
             -j            Echo pretty JSON from open-meteo API and exit.
 `)
-        process.exit(0);;
+        process.exitCode = 0;
         
     }catch(err){
-        process.exit(1);
+        process.exitCode = 1;
     }
 }
 
@@ -33,7 +33,7 @@ const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' 
 
 const data = await response.json();
 
-if (!args.h && !args.j){
+if (!args.h){
     console.log(data)
     
     const days = args.d
