@@ -17,10 +17,10 @@ if (args.h) {
             -d 0-6        Day to retrieve weather: 0 is today; defaults to 1.
             -j            Echo pretty JSON from open-meteo API and exit.
 `)
-        process.exitCode = 0;
+        process.exit(0);;
         
     }catch(err){
-        process.exitCode = 1;
+        process.exit(1);
     }
 }
 
